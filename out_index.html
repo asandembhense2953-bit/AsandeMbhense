@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asande Njabulo Mbhense | Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+/* Global Styles */
+:root {
+    --primary-color: #0033FF;
+    --secondary-color: #00033D;
+    --text-color: #ffffff;
+    --text-light: #e0e0e0;
+    --bg-color: #00033D;
+    --card-bg: #001146;
+    --footer-bg: #000022;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn-primary:hover {
+    background-color: #0022cc;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 51, 255, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 51, 255, 0.2);
+}
+
+
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 3, 61, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    background: linear-gradient(to right, var(--primary-color), #00a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 0 100px;
+    background: linear-gradient(135deg, var(--bg-color) 0%, #000022 100%);
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 30px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, var(--primary-color), #00a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 5px solid var(--primary-color);
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Typing Effect */
+.typing-effect {
+    min-height: 60px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.typed-text {
+    color: var(--primary-color);
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    margin-left: 4px;
+    background: var(--primary-color);
+    animation: blink 1s infinite;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0%  { background: var(--primary-color); }
+    49% { background: var(--primary-color); }
+    50% { background: transparent; }
+    99% { background: transparent; }
+    100%  { background: var(--primary-color); }
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.location {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.location i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.tech-stack {
+    flex: 1;
+    min-width: 300px;
+}
+
+.tech-stack h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.tech-stack h4 {
+    font-size: 1rem;
+    margin: 20px 0 10px;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.stack-group {
+    margin-bottom: 10px;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.badge {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge i {
+    font-size: 1.1rem;
+}
+
+.badge:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 51, 255, 0.3);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(300px, 1fr)) !important;
+    gap: 30px;
+    margin-top: 50px;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-auto-rows: auto;
+    width: 100%;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 51, 255, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 520px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 51, 255, 0.2);
+    border-color: var(--primary-color);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.project-description {
+    margin-bottom: 20px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.project-card .btn {
+    margin-top: 18px;
+}
+
+@media (max-width: 1100px) {
+    .projects-grid { grid-template-columns: repeat(2, minmax(280px, 1fr)) !important; }
+}
+
+@media (max-width: 768px) {
+    .projects-grid { grid-template-columns: 1fr !important; }
+    .project-card { min-height: auto; }
+}
+
+.project-tech {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.project-tech span {
+    background-color: rgba(0, 51, 255, 0.1);
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-tech i {
+    font-size: 0.9rem;
+}
+
+/* ===================== */
+/* CERTIFICATES SECTION  */
+/* ===================== */
+.certificates {
+    background:
+        radial-gradient(circle at top left, rgba(0, 51, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, #000a2e 0%, #00033D 100%);
+    position: relative;
+}
+
+.certificates::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.04), transparent 45%, rgba(255,255,255,0.03));
+    pointer-events: none;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 50px;
+}
+
+.cert-card {
+    background: linear-gradient(145deg, rgba(0, 17, 70, 0.95), rgba(0, 9, 41, 0.95));
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 51, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 18px 40px rgba(0, 51, 255, 0.22);
+    border-color: var(--primary-color);
+}
+
+/* The certificate image container */
+.cert-image-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f8f8, #dfe7ff);
+    position: relative;
+}
+
+.cert-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18));
+    pointer-events: none;
+}
+
+.cert-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.cert-card:hover .cert-image-wrap img {
+    transform: scale(1.05);
+}
+
+.cert-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.cert-provider {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7aa4ff;
+}
+
+.cert-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+}
+
+.cert-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 2px;
+}
+
+.cert-issuer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.cert-issuer i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.cert-date {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-style: italic;
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.contact-info p, .contact-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    width: 25px;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 51, 255, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#formStatus {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#formStatus.ok { color: #4ade80; }
+#formStatus.err { color: #f87171; }
+
+.contact-form button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--footer-bg);
+    padding: 50px 0 20px;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0, 51, 255, 0.3);
+    text-decoration: none;
+    border: none;
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background-color: #0022cc;
+    transform: translateY(-5px);
+}
+
+/* =================== */
+/* CHATBOT WIDGET       */
+/* =================== */
+.chat-window {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    width: 340px;
+    max-width: calc(100vw - 40px);
+    height: 460px;
+    max-height: calc(100vh - 160px);
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 51, 255, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.chat-window.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.chat-header-title i {
+    font-size: 1.1rem;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.chat-close:hover {
+    opacity: 1;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #00072e;
+}
+
+.chat-msg {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.chat-msg.bot {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 51, 255, 0.25);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-msg.user {
+    background-color: var(--primary-color);
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-msg a {
+    color: #7aa4ff;
+}
+
+.chat-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 16px 10px;
+    background-color: #00072e;
+}
+
+.chat-chip {
+    background-color: rgba(0, 51, 255, 0.15);
+    border: 1px solid rgba(0, 51, 255, 0.4);
+    color: var(--text-light);
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chat-chip:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.chat-input-row {
+    display: flex;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    gap: 8px;
+    background-color: var(--card-bg);
+}
+
+.chat-input-row input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+}
+
+.chat-input-row input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.chat-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.chat-send:hover {
+    background-color: #0022cc;
+}
+
+@media (max-width: 480px) {
+    .chat-window {
+        right: 10px;
+        left: 10px;
+        width: auto;
+        bottom: 90px;
+    }
+}
+
+/* =================== */
+/* ICT PROJECTS SECTION */
+/* =================== */
+.ict-projects {
+    background: linear-gradient(180deg, #000a2e 0%, #00033D 100%);
+}
+
+.ict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.ict-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 51, 255, 0.2);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.ict-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 51, 255, 0.25);
+    border-color: var(--primary-color);
+}
+
+.ict-mockup {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ict-mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+}
+
+.ict-card:hover .ict-mockup img {
+    transform: scale(1.05);
+}
+
+/* Mobile-style mockup frame for phone-screenshot cards */
+.ict-mockup.mobile-frame {
+    background: #111;
+    padding: 0;
+}
+
+.ict-mockup.mobile-frame img {
+    object-fit: cover;
+    object-position: top center;
+}
+
+.ict-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.ict-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ict-description {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.ict-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 4px;
+}
+
+.ict-stack span {
+    background: rgba(0, 51, 255, 0.1);
+    color: #4d7fff;
+    border: 1px solid rgba(0, 51, 255, 0.3);
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+.ict-actions {
+    margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ict-grid { grid-template-columns: 1fr; }
+}
+
+.ict-btn-row {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ict-live-btn,
+.ict-repo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), #4d7fff);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 51, 255, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ict-live-btn:hover,
+.ict-repo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 51, 255, 0.3);
+    background: linear-gradient(135deg, #0022cc, var(--primary-color));
+}
+
+.ict-live-btn i,
+.ict-repo-btn i {
+    font-size: 1rem;
+}
+
+/* =================== */
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.3rem; }
+    .section-title { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-list {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: 0.3s ease;
+        z-index: 999;
+    }
+    .nav-list.active { left: 0; }
+    .nav-link { margin: 15px 0; }
+    .hero { padding: 120px 0 80px; }
+    .hero-content { padding-right: 0; text-align: center; }
+    .hero-buttons { justify-content: center; }
+    .btn-secondary { margin-left: 0; margin-top: 15px; }
+    .about-content, .contact-content { flex-direction: column; text-align: center; }
+    .badges { justify-content: center; }
+    .contact-info { text-align: center; margin-bottom: 30px; }
+    .contact-info p, .contact-link { justify-content: center; }
+    .certs-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .section-title { font-size: 1.8rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">ANM</a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#ict-projects" class="nav-link">ICT Projects</a></li>
+                    <li><a href="#projects" class="nav-link">Web Projects</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Asande Njabulo Mbhense</h1>
+                <h2 class="hero-subtitle">Software Developer</h2>
+                <p class="hero-text">Software developer based in Durban.
+I take the process your team does by hand every week and turn it into something that takes ten minutes.</p>
+                <div class="typing-effect">
+                    <span class="typed-text"></span>
+                    <span class="cursor">&nbsp;</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Send a Message</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://i.postimg.cc/50dhj7Xy/Whats-App-Image-2025-07-26-at-22-15-48.jpg" alt="Asande Njabulo Mbhense">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I specialize in building responsive, fully working websites for businesses. I enjoy turning ideas into code and bringing visions to life on the web. Every line I write is geared toward functionality, clarity, and customer satisfaction.</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Based in Durban, South Africa</p>
+                </div>
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="badges">
+                        <span class="badge"><i class="fab fa-java"></i> Java</span>
+                        <span class="badge"><i class="fab fa-python"></i> Python</span>
+                        <span class="badge"><i class="fas fa-code"></i> C#</span>
+                        <span class="badge"><i class="fas fa-database"></i> SQL</span>
+                        <span class="badge"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="badge"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="badge"><i class="fas fa-mobile-alt"></i> Flutter</span>
+                        <span class="badge"><i class="fas fa-mobile"></i> Ionic</span>
+                        <span class="badge"><i class="fab fa-android"></i> Android Studio</span>
+                        <span class="badge"><i class="fas fa-server"></i> Supabase</span>
+                        <span class="badge"><i class="fas fa-lock"></i> Row Level Security</span>
+                        <span class="badge"><i class="fas fa-cloud"></i> REST APIs</span>
+                        <span class="badge"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="badge"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                        <span class="badge"><i class="fas fa-chrome"></i> Chrome Extensions</span>
+                        <span class="badge"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="badge"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="badge"><i class="fas fa-pencil-ruler"></i> UI/UX</span>
+                        <span class="badge"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                        <span class="badge"><i class="fas fa-paint-brush"></i> Logo Design</span>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ICT Projects Section -->
+    <section id="ict-projects" class="ict-projects">
+        <div class="container">
+            <h2 class="section-title">Top ICT Projects</h2>
+            <div class="ict-grid">
+
+                <!-- CampusCare -->
+                <div class="ict-card">
+                    <div class="ict-mockup" style="background:#0d1b3e;">
+                        <img src="https://i.postimg.cc/xdcKHB30/Screenshot-(1469).jpg"
+                             alt="CampusCare"
+                             style="object-fit:contain; object-position:center;">
+                    </div>
+                    <div class="ict-body">
+                        <div class="ict-title">CampusCare</div>
+                        <div class="ict-description">A full-stack campus health management system with student registration, sign-in, role-based access, and secure data via Supabase. Hosted on GitHub Pages with auto-deployment.</div>
+                        <div class="ict-stack">
+                            <span>HTML &amp; CSS</span>
+                            <span>Vanilla JS</span>
+                            <span>Supabase</span>
+                            <span>PostgreSQL</span>
+                            <span>Row Level Security</span>
+                            <span>GitHub Pages</span>
+                            <span>Git</span>
+                        </div>
+                        <div class="ict-actions" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                            <a href="https://asandembhense2953-bit.github.io/campuscare/" target="_blank" class="btn btn-primary" style="font-size:0.85rem; padding:10px 22px;">Live View</a>
+                            
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<!-- TIAH -->
+<div class="ict-card">
+    <div class="ict-mockup" style="background:#0d1b3e;">
+        <img src="https://i.postimg.cc/jj5Y5byZ/Whats-App-Image-2026-08-20-at-15-29-32.jpg"
+             alt="TIAH - The Ideal Accommodation Haven"
+             style="object-fit:contain; object-position:center;">
+    </div>
+    <div class="ict-body">
+        <div class="ict-title">TIAH</div>
+        <div class="ict-description">A modern luxury website revamp for The Ideal Accommodation Haven, a short-stay accommodation business in Durban with locations in Musgrave and North Beach. Features WhatsApp booking integration, a booking enquiry system, and a mobile-friendly, gold-accented design built to drive direct bookings.</div>
+        <div class="ict-stack">
+            <span>HTML &amp; CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive Design</span>
+            <span>WhatsApp Integration</span>
+            <span>Git</span>
+        </div>
+        <div class="ict-actions" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+            <a href="https://www.staytiah.com/" target="_blank" class="btn btn-primary" style="font-size:0.85rem; padding:10px 22px;">Live View</a>
+           
+            </a>
+        </div>
+    </div>
+</div>
+                <!-- Oasis Laundry Management System -->
+                <div class="ict-card">
+                    <div class="ict-mockup" style="background:#0d1b3e;">
+                        <img src="https://i.postimg.cc/Dy6sPkCT/Screenshot-(1198).jpg"
+                             alt="Oasis Laundry Management System"
+                             style="object-fit:contain; object-position:center;">
+                    </div>
+                    <div class="ict-body">
+                        <div class="ict-title">Oasis Laundry Management System</div>
+                        <div class="ict-description">A dark-themed, green-accented laundry management system for Oasis Dry Cleaning &amp; Laundry (Glenwood, Durban), covering Dashboard, Orders, Customers, Billing, Inventory and more — with role-based staff access, POPIA consent tracking, QR scan auto-advance, audit logging, and automated backup emails.</div>
+                        <div class="ict-stack">
+                            <span>HTML &amp; CSS</span>
+                            <span>Vanilla JS</span>
+                            <span>Supabase</span>
+                            <span>PostgreSQL</span>
+                            <span>Row Level Security</span>
+                            <span>EmailJS</span>
+                            <span>Git</span>
+                        </div>
+                        <div class="ict-actions" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                            <a href="https://oasis-server-8oe1.onrender.com" target="_blank" class="btn btn-primary" style="font-size:0.85rem; padding:10px 22px;">Live View</a>
+                            <a href="https://github.com/lduma249-cmyk/oasis-server" target="_blank" rel="noopener noreferrer" class="ict-repo-btn" aria-label="Open Oasis repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Budget Tracker Mobile App -->
+                <div class="ict-card">
+                    <div class="ict-mockup mobile-frame" style="background:#111; padding:10px 30px;">
+                        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='500'%3E%3Crect width='100%25' height='100%25' fill='%23111111'/%3E%3Ctext x='50%25' y='50%25' fill='%234d7fff' font-family='Poppins,Arial' font-size='18' text-anchor='middle' dominant-baseline='middle'%3EBudget Tracker%3C/text%3E%3C/svg%3E"
+                             alt="Budget Tracker App"
+                             style="object-fit:contain; border-radius:12px; height:100%; object-position:top;">
+                    </div>
+                    <div class="ict-body">
+                        <div class="ict-title">Budget Tracker App</div>
+                        <div class="ict-description">A cross-platform mobile expense tracker built with Flutter. Features a monthly budget card, spending by category, recent expenses list, and a receipt scan feature.</div>
+                        <div class="ict-stack">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Mobile App</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather App -->
+                <div class="ict-card">
+                    <div class="ict-mockup mobile-frame" style="background:#4a5fa8; padding:10px 30px;">
+                        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='500'%3E%3Crect width='100%25' height='100%25' fill='%234a5fa8'/%3E%3Ctext x='50%25' y='50%25' fill='%23ffffff' font-family='Poppins,Arial' font-size='18' text-anchor='middle' dominant-baseline='middle'%3EWeather App%3C/text%3E%3C/svg%3E"
+                             alt="Weather App"
+                             style="object-fit:contain; border-radius:12px; height:100%; object-position:top;">
+                    </div>
+                    <div class="ict-body">
+                        <div class="ict-title">Weather App</div>
+                        <div class="ict-description">A mobile weather application that fetches live weather data by city name using a public REST API. Features a dynamic gradient UI that reflects weather conditions and time of day.</div>
+                        <div class="ict-stack">
+                            <span>Flutter</span>
+                            <span>REST API</span>
+                            <span>Dart</span>
+                            <span>Mobile App</span>
+                        </div>
+                    </div>
+                </div>
+
+<!-- SmartClinic -->
+<div class="ict-card">
+    <div class="ict-mockup" style="background:#f4f1ea; padding:0;">
+        <img src="https://i.postimg.cc/YSNrddmS/Screenshot-(1233).jpg"
+             alt="SmartClinic"
+             style="object-fit:cover; border-radius:12px; width:100%; height:100%; object-position:top;">
+    </div>
+    <div class="ict-body">
+        <div class="ict-title">SmartClinic</div>
+        <div class="ict-description">A full-stack clinic queue management system with real-time occupancy sensors, dynamic wait-time predictions, and automated appointment reminders. Multi-role dashboards for patients, receptionists, doctors, nurses, and admins, backed by QR code check-in and a NoShow cron job.</div>
+        <div class="ict-stack">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>Supabase</span>
+            <span>EmailJS</span>
+        </div>
+        <div class="ict-btn-row">
+            <a href="https://smartclinic-2qwt.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:0.95rem; padding: 11px 22px;">
+                Live View
+            </a>
+            <a href="https://github.com/mmbh3n53293/lastly" target="_blank" rel="noopener noreferrer" class="ict-repo-btn" aria-label="Open SmartClinic repository">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                <!-- Malicious URL Detector -->
+                <div class="ict-card">
+                    <div class="ict-mockup" style="background:#1a1a2e;">
+                        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='220'%3E%3Crect width='100%25' height='100%25' fill='%231a1a2e'/%3E%3Ctext x='50%25' y='50%25' fill='%234d7fff' font-family='Poppins,Arial' font-size='18' text-anchor='middle' dominant-baseline='middle'%3EMalicious URL Detector%3C/text%3E%3C/svg%3E"
+                             alt="Malicious URL Detector"
+                             style="object-fit:contain; object-position:center;">
+                    </div>
+                    <div class="ict-body">
+                        <div class="ict-title">Malicious URL Detector</div>
+                        <div class="ict-description">A Chrome browser extension that provides real-time malicious URL detection and blocking to protect users from phishing, malware, and online fraud. Reads browsing history and sends security notifications.</div>
+                        <div class="ict-stack">
+                            <span>JavaScript</span>
+                            <span>Chrome Extension</span>
+                            <span>Cybersecurity</span>
+                            <span>HTML &amp; CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/MKyLTCwS/Screenshot-(1249).jpg" alt="AquaFlow">
+                    </div>
+                    <h3 class="project-title">AquaFlow</h3>
+                    <p class="project-description">Plumbing and water systems business website with service listings and contact form.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://aqua-flow-gamma.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/Vvd2NgwV/d28941e4-39cf-409c-bd0a-cf73b692e648.jpg" alt="Moses & Sons">
+                    </div>
+                    <h3 class="project-title">Moses & Sons</h3>
+                    <p class="project-description">Construction and general building company website showcasing projects and services.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://moses-sons.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/N0Z17HjG/Whats-App-Image-2026-08-06-at-10-59-58-(1).jpg" alt="Oupa Ceiling Masters">
+                    </div>
+                    <h3 class="project-title">Oupa Ceiling Masters</h3>
+                    <p class="project-description">Ceiling design and home interiors business website with gallery and quote system.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://oupa-ceiling-masters.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/jqhDRFJW/d0e64803-bb13-4c87-bdb0-eb72fef583fa.jpg" alt="NQABS Built-Ins">
+                    </div>
+                    <h3 class="project-title">NQABS Built-Ins</h3>
+                    <p class="project-description">Custom built-in furniture and fittings business website with product showcase.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://nqabs-built-ins-services-2hzg.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/HkPYfzhL/Screenshot-498.png" alt="MR SUITS SA">
+                    </div>
+                    <h3 class="project-title">MR SUITS SA</h3>
+                    <p class="project-description">Premium men's suits and formalwear e-commerce website with product catalog.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://mr-suits-sa.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/85yXgVMt/preview.jpg" alt="Eyethu RoadHouse Restaurant">
+                    </div>
+                    <h3 class="project-title">Eyethu RoadHouse Restaurant</h3>
+                    <p class="project-description">A newly opened restaurant in Ladysmith featuring menu, location, and online reservations.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://eyethu-road-house.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/vmzDbN87/Whats-App-Image-2025-07-26-at-23-38-59.jpg" alt="SmarTech">
+                    </div>
+                    <h3 class="project-title">SmarTech</h3>
+                    <p class="project-description">iPhone sales and smart device solutions e-commerce landing page with product showcases.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://smar-tech-rho.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/7LmWBtsB/Screenshot-499.png" alt="Saint Beauty Studio">
+                    </div>
+                    <h3 class="project-title">Saint Beauty Studio</h3>
+                    <p class="project-description">A beauty studio website with appointment booking system and service menu.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://saint-beauty-studio.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/P5JSmB9J/Whats-App-Image-2025-07-26-at-23-38-46.jpg" alt="HairMaidNdu">
+                    </div>
+                    <h3 class="project-title">HairMaidNdu</h3>
+                    <p class="project-description">Modern salon and grooming studio website with booking functionality and stylist profiles.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://hair-maid-by-ndu.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/LX05jgrk/Whats-App-Image-2026-02-20-at-16-44-51.jpg" alt="RoomDecor">
+                    </div>
+                    <h3 class="project-title">RoomDecor</h3>
+                    <p class="project-description">Interior design and room decoration services website with portfolio gallery.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://room-decor-thembisile.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/qqhsKTZt/Whats-App-Image-2026-02-20-at-16-43-22.jpg" alt="Uncle G Barbershop">
+                    </div>
+                    <h3 class="project-title">Uncle G Barbershop</h3>
+                    <p class="project-description">Traditional barbershop website with service list, pricing, and appointment scheduling.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://asandembhense2953-bit.github.io/UNCLE-G-BARBERSHOP/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/ZKL0RsJs/Whats-App-Image-2026-02-20-at-16-43-58.jpg" alt="One Home Guest">
+                    </div>
+                    <h3 class="project-title">One Home Guest</h3>
+                    <p class="project-description">Guest house accommodation website with room listings, amenities, and online booking.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://one-home-guest-house.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/L4DMgcZz/Whats-App-Image-2026-02-20-at-16-43-46.jpg" alt="Max Temporary Tattoo">
+                    </div>
+                    <h3 class="project-title">Max Temporary Tattoo</h3>
+                    <p class="project-description">Temporary tattoo studio website showcasing designs, prices, and booking information.</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://max-temporary-tatoo.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/vm65HsSQ/Screenshot-(1176).jpg" alt="PMB Clear CUT">
+                    </div>
+                    <h3 class="project-title">PMB Clear Cut Coatings</h3>
+                    <p class="project-description">Professional Tree Felling, Stump Removal, Painting & Fencing Solutions</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://pmb-clear-cut-coatings.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://i.postimg.cc/dtYF5jK2/Screenshot-(1177).jpg" alt="PMB Clear CUT">
+                    </div>
+                    <h3 class="project-title">NextDoor Carwash</h3>
+                    <p class="project-description">Premium Mobile Car Wash We Come To You</p>
+                    <div class="project-tech">
+                        <span><i class="fab fa-html5"></i> HTML</span>
+                        <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                    <a href="https://next-door-car-wash.vercel.app/" target="_blank" class="btn btn-primary">Live View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== -->
+    <!-- CERTIFICATES SECTION -->
+    <!-- =================== -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="certs-grid">
+
+                <!-- 1. HTML Essentials -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/q7jMN9t7/image.png" alt="HTML Essentials Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">HTML Essentials</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> 30 Hours</span>
+                            <span class="cert-date">Aug 04, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Machine Learning using Python -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/fW6XW9Qs/image.png" alt="Machine Learning Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">Machine Learning using Python</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">25 Apr 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. IT Support Specialist Pathway Exam -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/667zkgY8/IT-Support-Specialist-Pathway-Exam.jpg" alt="IT Support Specialist Pathway Exam Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">IT Support Specialist Pathway Exam</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">17 Jul 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Hardware and Upgrade Support -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/sg0MC6nC/Hardware-and-Upgrade-Support.jpg" alt="Hardware and Upgrade Support Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">Hardware and Upgrade Support</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">17 Jul 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Security and Connectivity Support -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/26CRcm4n/Security-and-Connectivity-Support.jpg" alt="Security and Connectivity Support Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">Security and Connectivity Support</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">18 Jul 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Operating Systems Support -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/QtK4Jyz9/Operating-Systems-Support.jpg" alt="Operating Systems Support Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">Operating Systems Support</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">18 Jul 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Introduction to Cybersecurity -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/NjxrxCy3/image.png" alt="Introduction to Cybersecurity Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">Introduction to Cybersecurity</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> 6 Hours</span>
+                            <span class="cert-date">Jun 16, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. IT Customer Support Basics -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/2yv1L0RP/image.png" alt="IT Customer Support Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">IT Customer Support Basics</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> 4 Hours</span>
+                            <span class="cert-date">Oct 27, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. CSS Essentials -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/ncbjffqz/image.png" alt="CSS Essentials Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Cisco Networking Academy</div>
+                        <div class="cert-title">CSS Essentials</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> 30 Hours</span>
+                            <span class="cert-date">Mar 07, 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. GIT -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/t4DY61wJ/image.png" alt="GIT Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">GIT</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">02 May 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. ChatGPT for YouTube Video Creation -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/CMD5NrXb/image.png" alt="ChatGPT for YouTube Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">ChatGPT for Youtube Video Creation</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">03 May 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Prompt Engineering with ChatGPT -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/SxQKmSsd/image.png" alt="Prompt Engineering Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">Prompt Engineering with ChatGPT</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">04 May 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. ChatGPT for Cybersecurity -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/ydR1LWQ8/image.png" alt="ChatGPT for Cybersecurity Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">ChatGPT for Cybersecurity</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">27 May 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Ethical Hacking 101 -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/J7b7JDBr/image.png" alt="Ethical Hacking Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">Ethical Hacking 101: Beginners Guide to Ethical Hacking</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">6 Nov 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Website UI/UX Designing using ChatGPT -->
+                <div class="cert-card">
+                    <div class="cert-image-wrap">
+                        <img src="https://i.postimg.cc/JzhR9p6g/image.png" alt="UI/UX Designing Certificate">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-provider">Simplilearn SkillUP</div>
+                        <div class="cert-title">Website UI/UX Designing using ChatGPT</div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer"><i class="fas fa-award"></i> Certificate of Completion</span>
+                            <span class="cert-date">6 Nov 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cca2a6adaeb9a0a3adbfada2a8a9f8ff8caba1ada5a0e2afa3a1">[email&#160;protected]</a></p>
+                    <p><i class="fas fa-phone"></i> 073 572 6119</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Durban, South Africa</p>
+                    <a href="https://wa.me/27735726119" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://github.com/WebFlow2953" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/asande-njabulo-345a6b323" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="from_name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="from_email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="contactSubmitBtn">Send Message</button>
+                    <div id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2025 Asande Njabulo Mbhense. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/WebFlow2953" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/asande-njabulo-345a6b323" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/27735726119" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="scroll-top" id="chatToggleBtn" aria-label="Chat about Asande"><i class="fas fa-comment-dots"></i></button>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-title"><i class="fas fa-robot"></i> Ask about Asande</div>
+            <button class="chat-close" id="chatCloseBtn" aria-label="Close chat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-suggestions" id="chatSuggestions">
+            <span class="chat-chip" data-q="What tech stack do you use?">Tech stack</span>
+            <span class="chat-chip" data-q="Tell me about your projects">Projects</span>
+            <span class="chat-chip" data-q="Where are you based?">Location</span>
+            <span class="chat-chip" data-q="How can I contact you?">Contact</span>
+        </div>
+        <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Ask a question about Asande...">
+            <button class="chat-send" id="chatSendBtn" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav-list');
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navList.classList.remove('active');
+        });
+    });
+
+    // Sticky Header
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Typing Effect
+    const typedTextSpan = document.querySelector('.typed-text');
+    const cursorSpan = document.querySelector('.cursor');
+    const textArray = ["Web Developer", "Problem Solver", "UI/UX Enthusiast"];
+    const typingDelay = 200, erasingDelay = 100, newTextDelay = 2000;
+    let textArrayIndex = 0, charIndex = 0;
+
+    function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+            if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            setTimeout(erase, newTextDelay);
+        }
+    }
+    function erase() {
+        if (charIndex > 0) {
+            if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            cursorSpan.classList.remove("typing");
+            textArrayIndex = (textArrayIndex + 1) % textArray.length;
+            setTimeout(type, typingDelay + 1100);
+        }
+    }
+    if (textArray.length) setTimeout(type, newTextDelay + 250);
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Animate on scroll
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.project-card, .cert-card, .about-text, .tech-stack, .contact-info, .contact-form');
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            if (elementPosition < window.innerHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    document.querySelectorAll('.project-card, .cert-card, .about-text, .tech-stack, .contact-info, .contact-form').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll();
+
+    // ===================================================
+    // EmailJS - Contact Form
+    // ===================================================
+    const EMAILJS_PUBLIC_KEY  = "cXmLIJc_yY2MykTkp";
+    const EMAILJS_SERVICE_ID  = "service_ji890hc";
+    const EMAILJS_TEMPLATE_ID = "template_ejrspmk";
+
+    if (window.emailjs) {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('contactSubmitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        formStatus.textContent = '';
+        formStatus.className = '';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+            .then(function() {
+                formStatus.textContent = "Thanks for your message! I'll get back to you soon.";
+                formStatus.className = 'ok';
+                contactForm.reset();
+            })
+            .catch(function(err) {
+                console.error('EmailJS error:', err);
+                formStatus.innerHTML = "Something went wrong sending this form. Please email me directly at " +
+                    "<a href='mailto:asandembhense@example.com' style='color:#7aa4ff;'>asandembhense@example.com</a> instead.";
+                formStatus.className = 'err';
+            })
+            .finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
+    });
+
+    // ===================================================
+    // Chatbot Widget - answers questions about Asande only
+    // ===================================================
+    const chatWindow = document.getElementById('chatWindow');
+    const chatToggleBtn = document.getElementById('chatToggleBtn');
+    const chatCloseBtn = document.getElementById('chatCloseBtn');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const chatSendBtn = document.getElementById('chatSendBtn');
+    const chatSuggestions = document.getElementById('chatSuggestions');
+    const CONTACT_EMAIL = "asandembhense@example.com";
+
+    // Toggle chat window instead of scrolling to top
+    chatToggleBtn.addEventListener('click', function() {
+        chatWindow.classList.toggle('open');
+        if (chatWindow.classList.contains('open') && chatMessages.children.length === 0) {
+            addBotMessage("Hi! I'm Asande's portfolio assistant. Ask me about his skills, projects, certificates, or how to get in touch. I can only answer questions about Asande.");
+        }
+    });
+    chatCloseBtn.addEventListener('click', function() {
+        chatWindow.classList.remove('open');
+    });
+
+    // Keep the toggle button visible so the chat stays reachable at all times.
+    chatToggleBtn.classList.add('active');
+
+    function addBotMessage(html) {
+        const div = document.createElement('div');
+        div.className = 'chat-msg bot';
+        div.innerHTML = html;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    function addUserMessage(text) {
+        const div = document.createElement('div');
+        div.className = 'chat-msg user';
+        div.textContent = text;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Knowledge base about Asande only, pulled from this portfolio's content.
+    const knowledgeBase = [
+        {
+            keywords: ['name', 'who are you', 'who is asande'],
+            answer: "This is the portfolio of Asande Njabulo Mbhense, a Software Developer based in Durban, South Africa."
+        },
+        {
+            keywords: ['location', 'based', 'live', 'city', 'where'],
+            answer: "Asande is based in Durban, South Africa."
+        },
+        {
+            keywords: ['stack', 'tech', 'technolog', 'skills', 'language', 'framework'],
+            answer: "Asande's tech stack includes Java, Python, C#, SQL, JavaScript, HTML5, CSS3, Flutter, Ionic, Android Studio, Supabase, Row Level Security, REST APIs, Linux, Cybersecurity, Chrome Extensions, Git, GitHub, UI/UX, Responsive Design, and Logo Design."
+        },
+        {
+            keywords: ['project', 'work', 'built', 'made', 'portfolio'],
+            answer: "Asande has built full-stack systems like CampusCare, SmartClinic, and the Oasis Laundry Management System, mobile apps like a Budget Tracker and Weather App in Flutter, a Malicious URL Detector Chrome extension, and many client business websites (TIAH, AquaFlow, Saint Beauty Studio, and more). Scroll up to see the ICT Projects and Web Projects sections for details."
+        },
+        {
+            keywords: ['certificate', 'certification', 'course', 'qualification', 'cisco', 'simplilearn'],
+            answer: "Asande holds certificates from Cisco Networking Academy (HTML Essentials, CSS Essentials, Introduction to Cybersecurity, IT Support Specialist Pathway, Hardware & Upgrade Support, Security & Connectivity Support, Operating Systems Support, IT Customer Support Basics) and Simplilearn SkillUP (Machine Learning using Python, GIT, Ethical Hacking 101, Prompt Engineering with ChatGPT, and more). See the Certificates section for the full list."
+        },
+        {
+            keywords: ['contact', 'email', 'reach', 'hire', 'phone', 'whatsapp', 'number'],
+            answer: "You can reach Asande via the contact form on this page, WhatsApp at 073 572 6119, or through GitHub/LinkedIn linked in the Contact section."
+        },
+        {
+            keywords: ['github', 'repo', 'code', 'repository'],
+            answer: "Asande's GitHub profile is linked in the Contact section and footer of this site."
+        },
+        {
+            keywords: ['linkedin'],
+            answer: "Asande's LinkedIn profile is linked in the Contact section and footer of this site."
+        },
+        {
+            keywords: ['clinic', 'smartclinic'],
+            answer: "SmartClinic is a full-stack clinic queue management system Asande built with Node.js, Express, and Supabase — featuring multi-role dashboards, QR check-in, and automated reminders."
+        },
+        {
+            keywords: ['laundry', 'oasis'],
+            answer: "The Oasis Laundry Management System is a dark-themed laundry management platform Asande built for Oasis Dry Cleaning & Laundry, with role-based access, POPIA consent tracking, and audit logging."
+        },
+        {
+            keywords: ['campuscare', 'campus'],
+            answer: "CampusCare is a full-stack campus health management system Asande built with Supabase, featuring student registration and role-based access, hosted on GitHub Pages."
+        },
+        {
+            keywords: ['tiah', 'accommodation'],
+            answer: "TIAH (The Ideal Accommodation Haven) is a luxury short-stay accommodation website Asande revamped for a Durban-based business, with WhatsApp booking integration."
+        },
+        {
+            keywords: ['mobile app', 'flutter', 'budget tracker', 'weather app'],
+            answer: "Asande built two Flutter mobile apps: a Budget Tracker with category spending and receipt scanning, and a Weather App that pulls live data from a REST API."
+        },
+        {
+            keywords: ['security', 'cybersecurity', 'malicious', 'extension'],
+            answer: "Asande built a Chrome extension called Malicious URL Detector that flags phishing and malware links in real time, and holds several Cisco cybersecurity certificates."
+        }
+    ];
+
+    function findAnswer(question) {
+        const q = question.toLowerCase();
+        for (const entry of knowledgeBase) {
+            if (entry.keywords.some(function(k) { return q.indexOf(k) !== -1; })) {
+                return entry.answer;
+            }
+        }
+        return null;
+    }
+
+    function isOffTopic(question) {
+        // Very light off-topic guard: if the question clearly isn't about Asande
+        // (no matching keyword and no personal pronoun referring to him), steer back.
+        const q = question.toLowerCase();
+        const aboutHim = ['asande', 'you', 'your', 'he', 'his'];
+        return !aboutHim.some(function(w) { return q.indexOf(w) !== -1; }) && !findAnswer(question);
+    }
+
+    function handleQuestion(question) {
+        addUserMessage(question);
+        const answer = findAnswer(question);
+
+        if (answer) {
+            addBotMessage(answer);
+            return;
+        }
+
+        if (isOffTopic(question)) {
+            addBotMessage(
+                "I can only answer questions about Asande — his skills, projects, certificates, or how to reach him. " +
+                "For anything else, please <a href='#contact'>send him a message</a> or email him directly instead."
+            );
+            return;
+        }
+
+        // Matched "about him" language but no keyword hit — recommend email rather than "try again".
+        addBotMessage(
+            "I don't have a ready answer for that yet. The best way to get a precise answer is to " +
+            "<a href='#contact'>send Asande a message</a> or email him directly, rather than rephrasing here."
+        );
+    }
+
+    chatSendBtn.addEventListener('click', function() {
+        const q = chatInput.value.trim();
+        if (!q) return;
+        chatInput.value = '';
+        handleQuestion(q);
+    });
+    chatInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            chatSendBtn.click();
+        }
+    });
+    chatSuggestions.addEventListener('click', function(e) {
+        const chip = e.target.closest('.chat-chip');
+        if (!chip) return;
+        handleQuestion(chip.getAttribute('data-q'));
+    });
+
+});
+</script>
+</body>
+</html>
